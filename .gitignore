@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+venv/
+env/
+.venv/
+
+# Build outputs
+dist/
+build/
+
+# Database files & Vector DB
+*.sqlite
+*.sqlite-journal
+*.db
+chroma_db/
+user_memories.json
+
+# Environment variables & Sensitive data
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# Python cache & IDE files
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+.DS_Store

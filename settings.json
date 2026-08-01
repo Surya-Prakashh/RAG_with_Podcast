@@ -1,0 +1,19 @@
+{
+  "active_provider": "ollama",
+  "openrouter": {
+    "api_key": "",
+    "default_model": "meta-llama/llama-3.3-70b-instruct",
+    "available_models": [
+      "anthropic/claude-3.5-sonnet",
+      "openai/gpt-4o-mini",
+      "meta-llama/llama-3.3-70b-instruct"
+    ]
+  },
+  "ollama": {
+    "base_url": "http://localhost:11434/",
+    "default_model": "qwen2.5:3b"
+  },
+  "database": {
+    "url": "sqlite+aiosqlite:///./lenny_db.sqlite"
+  }
+}

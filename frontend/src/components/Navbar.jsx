@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useChat } from '../context/ChatContext';
-import { Settings, Sparkles, Cpu, Cloud, Radio, Terminal, Brain } from 'lucide-react';
+import { Settings, Sparkles, Cpu, Cloud, Radio, Terminal, Brain, Server } from 'lucide-react';
 import { LogsModal } from './LogsModal';
 import { MemoriesModal } from './MemoriesModal';
+import { ApiDashboardModal } from './ApiDashboardModal';
 
 export const Navbar = () => {
   const { settings, modelsInfo, setIsSettingsOpen } = useChat();
   const [isLogsOpen, setIsLogsOpen] = useState(false);
   const [isMemoriesOpen, setIsMemoriesOpen] = useState(false);
+  const [isApiDashboardOpen, setIsApiDashboardOpen] = useState(false);
 
   const provider = settings?.active_provider || 'ollama';
   const isOllama = provider === 'ollama';
@@ -43,6 +45,15 @@ export const Navbar = () => {
 
           <button 
             className="icon-button" 
+            onClick={() => setIsApiDashboardOpen(true)}
+            title="Interactive REST & SSE API Swagger Dashboard"
+            style={{ color: '#818cf8' }}
+          >
+            <Server size={18} />
+          </button>
+
+          <button 
+            className="icon-button" 
             onClick={() => setIsMemoriesOpen(true)}
             title="Mem0 User Long-Term Memory"
             style={{ color: '#f472b6' }}
@@ -68,8 +79,10 @@ export const Navbar = () => {
         </div>
       </header>
 
+      <ApiDashboardModal isOpen={isApiDashboardOpen} onClose={() => setIsApiDashboardOpen(false)} />
       <LogsModal isOpen={isLogsOpen} onClose={() => setIsLogsOpen(false)} />
       <MemoriesModal isOpen={isMemoriesOpen} onClose={() => setIsMemoriesOpen(false)} />
     </>
   );
 };
+

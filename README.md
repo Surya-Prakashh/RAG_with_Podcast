@@ -6,7 +6,7 @@
 
 ## 🔑 How to Switch to OpenRouter & Set API Key
 
-You can switch to OpenRouter and configure your API key using **3 different methods**:
+*:
 
 ### Method 1: Directly in the Web UI (Recommended — Zero Restarts!)
 1. Open the application in your browser at **`http://localhost:5173`**.
